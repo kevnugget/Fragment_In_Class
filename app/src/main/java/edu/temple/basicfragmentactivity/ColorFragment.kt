@@ -1,0 +1,23 @@
+package edu.temple.basicfragmentactivity
+
+import android.graphics.Color
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.core.graphics.toColorInt
+
+class ColorFragment : Fragment() {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_color, container, false).apply{ // gives us a view that we can directly use "apply"
+            setBackgroundColor(
+                arrayOf("White", "Blue", "Red", "Yellow", "Magenta").random().toColorInt())
+        }
+    }
+
+}
